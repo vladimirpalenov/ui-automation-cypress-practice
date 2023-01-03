@@ -1,13 +1,10 @@
 {
   "name": "ui-automation-selenium-practice-",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "End to end tests on Cypress for localcoding.us",
   "scripts": {
     "cy:open": "cypress open"
   },
-  "keywords": [],
-  "author": "",
+  "author": "Vladimir Palenov",
   "license": "ISC",
   "dependencies": {
     "cypress": "^12.2.0"
