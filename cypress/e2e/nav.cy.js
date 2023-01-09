@@ -9,7 +9,7 @@ describe('Navigation', () => {
         cy.get('[type="submit"]').click()
 
         // Click on 'Cources' link
-        cy.get(['data-qa="topmenu-Courses"']).click()
+        cy.get('[data-qa="topmenu-Courses"]').click()
 
         // Verifying correct path and correct elements are visible on 'Courses' page
         cy.location('pathname').should('include', '/course')
