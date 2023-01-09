@@ -6,5 +6,7 @@ module.exports = defineConfig({
       // implement node event listeners here
     },
     baseUrl: 'https://localcoding.us',
+    viewportWidth: 1280,
+    viewportHeight: 720,
   },
 });
