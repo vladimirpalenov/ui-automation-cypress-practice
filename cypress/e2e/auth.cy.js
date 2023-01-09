@@ -12,6 +12,7 @@ describe('Authentification', () => {
     cy.location('pathname').should('include', 'profile')
     cy.get('.ant-avatar-square').should('be.visible')
   })
+
   it('Log in with valid email and invalid password', () => {
     // Navigating to the login path
     cy.visit('/user/login')
@@ -25,6 +26,7 @@ describe('Authentification', () => {
     cy.location('pathname').should('include', 'login')
     cy.get('.ant-notification-notice-message').should('have.text', 'Auth failed').should('be.visible')
   })
+
   it('Log in with invalid email and password', () => {
     // Navigating to the login page
     cy.visit('/user/login')
@@ -37,5 +39,17 @@ describe('Authentification', () => {
     // Verifying that alert message 'Auth failed' pops up on the login page
     cy.location('pathname').should('include', 'login')
     cy.get('.ant-notification-notice-message').should('have.text', 'Auth failed').should('be.visible')
+  })
+
+  it.only ('Typing invalidly formatted email', () => {
+    // Navigating to the login page
+    cy.visit('/user/login')
+
+    // Typing in invalidly formatted email
+    cy.get('#normal_login_email').type('pa.bcdef@ghicom')
+
+    // Verifying that "'email' is not a valid email" error message is displayed under the email field
+    //cy.contains('\'email\' is not a valid email').
+
   })
 })
