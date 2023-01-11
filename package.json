@@ -2,11 +2,16 @@
   "name": "ui-automation-selenium-practice-",
   "description": "End to end tests on Cypress for localcoding.us",
   "scripts": {
-    "cy:open": "cypress open"
+    "cy:open": "cypress open",
+    "lint": "prettier cypress/ --check",
+    "format": "prettier cypress/ --write --list-different"
   },
   "author": "Vladimir Palenov",
   "license": "ISC",
   "dependencies": {
     "cypress": "^12.2.0"
+  },
+  "devDependencies": {
+    "prettier": "2.8.2"
   }
 }

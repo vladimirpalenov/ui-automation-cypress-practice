@@ -1,5 +1,4 @@
 describe('Authentification', () => {
-
   // Hook to navigate to the login page before each test
   beforeEach(() => {
     // Navigating to the login page
@@ -18,7 +17,6 @@ describe('Authentification', () => {
   })
 
   it('Log in with valid email and invalid password', () => {
-
     // Typing in valid login and invalid password, clicking 'Log in' button
     cy.get('#normal_login_email').type('palenov@gmail.com')
     cy.get('#normal_login_password').type('Test123')
@@ -26,11 +24,12 @@ describe('Authentification', () => {
 
     // Verifying that alert message 'Auth failed' pops up on the login page
     cy.location('pathname').should('include', 'login')
-    cy.get('.ant-notification-notice-message').should('have.text', 'Auth failed').should('be.visible')
+    cy.get('.ant-notification-notice-message')
+      .should('have.text', 'Auth failed')
+      .should('be.visible')
   })
 
   it('Log in with invalid email and password', () => {
-
     // Typing in invalid login and password, clicking 'Log in' button
     cy.get('#normal_login_email').type('pabcdef@ghijkl.com')
     cy.get('#normal_login_password').type('W#4912Afm@')
@@ -38,16 +37,17 @@ describe('Authentification', () => {
 
     // Verifying that alert message 'Auth failed' pops up on the login page
     cy.location('pathname').should('include', 'login')
-    cy.get('.ant-notification-notice-message').should('have.text', 'Auth failed').should('be.visible')
+    cy.get('.ant-notification-notice-message')
+      .should('have.text', 'Auth failed')
+      .should('be.visible')
   })
 
-  it ('Typing invalidly formatted email', () => {
-
+  it('Typing invalidly formatted email', () => {
     // Typing in invalidly formatted email
     cy.get('#normal_login_email').type('pa.bcdef@ghicom')
 
     // Verifying that "'email' is not a valid email" error message is displayed under the email field
-    cy.contains('\'email\' is not a valid email').should('be.visible')
+    cy.contains("'email' is not a valid email").should('be.visible')
 
     // Verifying that clearing data typed in the email input field results in 'Required' error message displayed under the email field
     cy.get('#normal_login_email').clear()
