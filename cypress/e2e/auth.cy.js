@@ -42,7 +42,7 @@ describe('Authentification', () => {
       .should('be.visible')
   })
 
-  it.omly('Typing invalidly formatted email', () => {
+  it('Typing invalidly formatted email', () => {
     // Typing in invalidly formatted email
     cy.get('#normal_login_email').type('pa.bcdef@ghicom')
 
