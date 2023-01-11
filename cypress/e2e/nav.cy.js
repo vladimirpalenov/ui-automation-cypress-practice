@@ -63,4 +63,13 @@ describe('Navigation', () => {
     cy.location('pathname').should('include', '/goal')
     cy.contains('Goals').should('be.visible')
   })
+
+  it('Local coding home logo redirects to homepage', () => {
+    // Click on Local coding home logo
+    cy.get('.text-nowrap').click()
+
+    // Verifying that user was redirected to the home page and page content is visible
+    cy.url().should('be.equals', 'https://localcoding.us/')
+    cy.contains('Interactive learning').should('be.visible')
+  })
 })
