@@ -42,7 +42,7 @@ describe('Authentification', () => {
       .should('be.visible')
   })
 
-  it ('Typing invalidly formatted email', () => {
+  it('Typing invalidly formatted email', () => {
     // Typing in invalidly formatted email
     cy.get('#normal_login_email').type('pa.bcdef@ghicom')
 
@@ -56,10 +56,8 @@ describe('Authentification', () => {
     cy.get('#normal_login_password').type('tEsT123@').clear()
 
     // Verifying that clearing data in email & password input fields results in 'Required' error message displayed under the input fields
-    cy.get('[class="ant-form-item-explain-error"]').each((error)=> {
-      cy.wrap(error)
-          .should('have.text', 'Required')
-          .should('be.visible')
+    cy.get('[class="ant-form-item-explain-error"]').each(error => {
+      cy.wrap(error).should('have.text', 'Required').should('be.visible')
     })
   })
 })
