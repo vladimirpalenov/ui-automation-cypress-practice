@@ -69,7 +69,7 @@ describe('Navigation', () => {
     cy.get('.text-nowrap').click()
 
     // Verifying that user was redirected to the home page and page content is visible
-    cy.url().should('be.equals', 'https://localcoding.us/')
+    cy.location(`pathname`).should(`eq`, `/`)
     cy.contains('Interactive learning').should('be.visible')
   })
 })

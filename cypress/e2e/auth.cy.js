@@ -51,12 +51,14 @@ describe('Authentification', () => {
 
     // Verifying that clearing data typed in the email input field results in 'Required' error message displayed under the email field
     cy.get('#normal_login_email').clear()
+    //////HERE
     cy.contains('Required').should('be.visible')
 
     // Typing in password
     cy.get('#normal_login_password').type('tEsT123@')
 
     // Verifying that clearing data typed in the password input field results in 'Required' error message displayed under the email field
+    /////// HERE
     cy.get('#normal_login_password').clear()
     cy.contains('Required').should('be.visible')
   })
