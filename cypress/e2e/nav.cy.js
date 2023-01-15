@@ -5,8 +5,8 @@ describe('Navigation', () => {
     cy.visit('/user/login')
 
     // Typing in valid login and password, clicking 'Log in' button
-    cy.get('#normal_login_email').type('palenov@gmail.com')
-    cy.get('#normal_login_password').type('Sergey9659')
+    cy.get('#normal_login_email').type(Cypress.env('email'))
+    cy.get('#normal_login_password').type(Cypress.env('password'))
     cy.get('[type="submit"]').click()
   })
 

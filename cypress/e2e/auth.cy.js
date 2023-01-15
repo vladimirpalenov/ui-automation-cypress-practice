@@ -7,8 +7,8 @@ describe('Authentification', () => {
 
   it('Log in with valid credentials', () => {
     // Typing in valid login and password, clicking 'Log in' button
-    cy.get('#normal_login_email').type('palenov@gmail.com')
-    cy.get('#normal_login_password').type('Sergey9659')
+    cy.get('#normal_login_email').type(Cypress.env('email'))
+    cy.get('#normal_login_password').type(Cypress.env('password'))
     cy.get('[type="submit"]').click()
 
     // Verifying that correct path was opened and the page is rendered (has visible unique element)
@@ -18,7 +18,7 @@ describe('Authentification', () => {
 
   it('Log in with valid email and invalid password', () => {
     // Typing in valid login and invalid password, clicking 'Log in' button
-    cy.get('#normal_login_email').type('palenov@gmail.com')
+    cy.get('#normal_login_email').type(Cypress.env('email'))
     cy.get('#normal_login_password').type('Test123')
     cy.get('[type="submit"]').click()
 
