@@ -26,11 +26,11 @@
 
 // LOGIN: Navigate to the login page, enter valid email and password and click submit
 Cypress.Commands.add('login', (email, password) => {
-    // Navigating to the login page
-    cy.visit('/user/login')
+  // Navigating to the login page
+  cy.visit('/user/login')
 
-    // Typing in valid login and password, clicking 'Log in' button
-    cy.get('#normal_login_email').type(email)
-    cy.get('#normal_login_password').type(password)
-    cy.get('[type="submit"]').click()
+  // Typing in valid login and password, clicking 'Log in' button
+  cy.get('#normal_login_email').type(email)
+  cy.get('#normal_login_password').type(password)
+  cy.get('[type="submit"]').click()
 })
