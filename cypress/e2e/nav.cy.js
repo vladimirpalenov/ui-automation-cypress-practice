@@ -1,13 +1,8 @@
 describe('Navigation', () => {
   //Hook to navigate to the login page, enter valid login, password, and click "Log in" button
   beforeEach(() => {
-    // Navigating to the login page
-    cy.visit('/user/login')
-
-    // Typing in valid login and password, clicking 'Log in' button
-    cy.get('#normal_login_email').type(Cypress.env('email'))
-    cy.get('#normal_login_password').type(Cypress.env('password'))
-    cy.get('[type="submit"]').click()
+    // Login with valid login and password
+    cy.login(Cypress.env('email'), Cypress.env('password'))
   })
 
   it('Courses link opens courses page', () => {
