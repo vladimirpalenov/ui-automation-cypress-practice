@@ -30,7 +30,7 @@ tbd
 ## Release History
 
 * 0.0.1
-    * CHANGE: 
+    * CHANGE: added package.json, package-lock.json
 * 0.0.2
     * CHANGE: 
     * ADD: 
