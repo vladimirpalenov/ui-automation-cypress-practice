@@ -24,13 +24,19 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-// LOGIN: Navigate to the login page, enter valid email and password and click submit
+// login: Authorization by sending API request including email and password, saving token and userId to local storage
 Cypress.Commands.add('login', (email, password) => {
-  // Navigating to the login page
-  cy.visit('/user/login')
+    // Navigating to the landing page
+    cy.visit('/')
 
-  // Typing in valid login and password, clicking 'Log in' button
-  cy.get('#normal_login_email').type(email)
-  cy.get('#normal_login_password').type(password)
-  cy.get('[type="submit"]').click()
+    // Sending authorization request, saving token and userId in local storage
+    cy.request('POST', 'https://server-prod.pasv.us/user/login', {email: email, password: password}).then(
+        (response) => {
+            // Saving values of token and userId from payload in local storage var
+            window.localStorage.setItem('token', response.body.payload.token)
+            window.localStorage.setItem('userId', response.body.payload.userId)
+        }
+    )
+    // Reload the browser
+    cy.reload()
 })
