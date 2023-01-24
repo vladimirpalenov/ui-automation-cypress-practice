@@ -1,16 +1,15 @@
+import AuthPage from "../pages/auth.page";
+
 describe('Authentification', () => {
   // Hook to navigate to the login page before each test
   beforeEach(() => {
     // Navigating to the login page
-    cy.visit('/user/login')
+    AuthPage.open()
   })
 
   it('Log in with valid credentials', () => {
     // Typing in valid login and password, clicking 'Log in' button
-    cy.get('#normal_login_email').type(Cypress.env('email'))
-    cy.get('#normal_login_password').type(Cypress.env('password'))
-    cy.get('[type="submit"]').click()
-
+    AuthPage.logIn(Cypress.env('email'), Cypress.env('password'))
     // Verifying that correct path was opened and the page is rendered (has visible unique element)
     cy.location('pathname').should('include', 'profile')
     cy.get('.ant-avatar-square').should('be.visible')
@@ -18,10 +17,7 @@ describe('Authentification', () => {
 
   it('Log in with valid email and invalid password', () => {
     // Typing in valid login and invalid password, clicking 'Log in' button
-    cy.get('#normal_login_email').type(Cypress.env('email'))
-    cy.get('#normal_login_password').type('Test123')
-    cy.get('[type="submit"]').click()
-
+    AuthPage.logIn(Cypress.env('email'), 'Test123')
     // Verifying that alert message 'Auth failed' pops up on the login page
     cy.location('pathname').should('include', 'login')
     cy.get('.ant-notification-notice-message')
@@ -31,13 +27,10 @@ describe('Authentification', () => {
 
   it('Log in with invalid email and password', () => {
     // Typing in invalid login and password, clicking 'Log in' button
-    cy.get('#normal_login_email').type('pabcdef@ghijkl.com')
-    cy.get('#normal_login_password').type('W#4912Afm@')
-    cy.get('[type="submit"]').click()
-
+    AuthPage.logIn('pabcdef@ghijkl.com', 'W#4912Afm@')
     // Verifying that alert message 'Auth failed' pops up on the login page
     cy.location('pathname').should('include', 'login')
-    cy.get('.ant-notification-notice-message')
+    AuthPage.toast
       .should('have.text', 'Auth failed')
       .should('be.visible')
   })
