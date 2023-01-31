@@ -1,13 +1,16 @@
+import MainPage from '../pages/app/main.page'
+
 describe('Navigation', () => {
   //Hook to navigate to the login page, enter valid login, password, and click "Log in" button
   beforeEach(() => {
     // Login with valid login and password
     cy.login(Cypress.env('email'), Cypress.env('password'))
+    MainPage.open()
   })
 
   it('Courses link opens courses page', () => {
     // Click on 'Cources' link
-    cy.get('[data-qa="topmenu-Courses"]').click()
+    MainPage.linkCources.click()
 
     // Verifying correct path and correct elements are visible on 'Courses' page
     cy.location('pathname').should('include', '/course')
@@ -16,7 +19,7 @@ describe('Navigation', () => {
 
   it('Interview Questions link opens correct page', () => {
     // Click on 'Interview Questions' link
-    cy.get('[data-qa="topmenu-Interview Questions"]').click()
+    MainPage.linkInterviewQuestions.click()
 
     // Verifying correct path and correct elements are visible on 'Interview Questions' page
     cy.location('pathname').should('include', '/flash')
@@ -25,7 +28,7 @@ describe('Navigation', () => {
 
   it('Diary link opens dairy page', () => {
     // Click on 'Diary' link
-    cy.get('[data-qa="topmenu-Diary"]').click()
+    MainPage.linkDiary.click()
 
     // Verifying correct path and correct elements are visible on 'Diary' page
     cy.location('pathname').should('include', '/diary')
@@ -34,7 +37,7 @@ describe('Navigation', () => {
 
   it('Groups link opens groups page', () => {
     // Click on 'Groups' link
-    cy.get('[data-qa="topmenu-Groups"]').click()
+    MainPage.linkGroups.click()
 
     // Verifying correct path and correct elements are visible on 'Groups' page
     cy.location('pathname').should('include', '/group')
@@ -43,7 +46,7 @@ describe('Navigation', () => {
 
   it('Challenges link opens challenges page', () => {
     // Click on 'Challenges' link
-    cy.get('[data-qa="topmenu-Challenges"]').click()
+    MainPage.linkChallenges.click()
 
     // Verifying correct path and correct elements are visible on 'Challenges' page
     cy.location('pathname').should('include', '/challenge')
@@ -52,7 +55,7 @@ describe('Navigation', () => {
 
   it('Goals link opens goals page', () => {
     // Click on 'Goals' link
-    cy.get('[data-qa="topmenu-Goals"]').click()
+    MainPage.linkGoals.click()
 
     // Verifying correct path and correct elements are visible on 'Goals' page
     cy.location('pathname').should('include', '/goal')
@@ -61,7 +64,7 @@ describe('Navigation', () => {
 
   it('Local coding home logo redirects to homepage', () => {
     // Click on Local coding home logo
-    cy.get('.text-nowrap').click()
+    MainPage.linkHomeLogo.click()
 
     // Verifying that user was redirected to the home page and page content is visible
     cy.location(`pathname`).should(`eq`, `/`)

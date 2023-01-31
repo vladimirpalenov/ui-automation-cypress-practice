@@ -1,4 +1,4 @@
-import AuthPage from "../pages/auth.page";
+import AuthPage from '../pages/auth.page'
 
 describe('Authentification', () => {
   // Hook to navigate to the login page before each test
@@ -30,9 +30,7 @@ describe('Authentification', () => {
     AuthPage.logIn('pabcdef@ghijkl.com', 'W#4912Afm@')
     // Verifying that alert message 'Auth failed' pops up on the login page
     cy.location('pathname').should('include', 'login')
-    AuthPage.toast
-      .should('have.text', 'Auth failed')
-      .should('be.visible')
+    AuthPage.toast.should('have.text', 'Auth failed').should('be.visible')
   })
 
   it('Typing invalidly formatted email', () => {
