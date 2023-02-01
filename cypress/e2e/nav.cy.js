@@ -1,5 +1,6 @@
 import MainPage from '../pages/app/main.page'
-import CoursesPage from "../pages/app/courses.page";
+import CoursesPage from '../pages/app/courses.page'
+import InterviewQuestionsPage from '../pages/app/interview-questions.page'
 
 describe('Navigation', () => {
   //Hook to navigate to the login page, enter valid login, password, and click "Log in" button
@@ -10,26 +11,26 @@ describe('Navigation', () => {
   })
 
   it('Courses link opens courses page', () => {
-    // Click on 'Cources' link
-    MainPage.linkCources.click()
+    // Click on 'Courses' link
+    MainPage.navbar.linkCourses.click()
 
     // Verifying correct path and correct elements are visible on 'Courses' page
-    cy.location('pathname').should('include', '/course')
+    CoursesPage.path.should('include', '/course')
     CoursesPage.header.should('be.visible')
   })
 
   it('Interview Questions link opens correct page', () => {
     // Click on 'Interview Questions' link
-    MainPage.linkInterviewQuestions.click()
+    MainPage.navbar.linkInterviewQuestions.click()
 
     // Verifying correct path and correct elements are visible on 'Interview Questions' page
-    cy.location('pathname').should('include', '/flash')
-    cy.contains('Interview practice cards').should('be.visible')
+    InterviewQuestionsPage.path.should('include', '/flash')
+    InterviewQuestionsPage.header.should('be.visible')
   })
 
   it('Diary link opens dairy page', () => {
     // Click on 'Diary' link
-    MainPage.linkDiary.click()
+    MainPage.navbar.linkDiary.click()
 
     // Verifying correct path and correct elements are visible on 'Diary' page
     cy.location('pathname').should('include', '/diary')
@@ -38,7 +39,7 @@ describe('Navigation', () => {
 
   it('Groups link opens groups page', () => {
     // Click on 'Groups' link
-    MainPage.linkGroups.click()
+    MainPage.navbar.linkGroups.click()
 
     // Verifying correct path and correct elements are visible on 'Groups' page
     cy.location('pathname').should('include', '/group')
@@ -47,7 +48,7 @@ describe('Navigation', () => {
 
   it('Challenges link opens challenges page', () => {
     // Click on 'Challenges' link
-    MainPage.linkChallenges.click()
+    MainPage.navbar.linkChallenges.click()
 
     // Verifying correct path and correct elements are visible on 'Challenges' page
     cy.location('pathname').should('include', '/challenge')
@@ -56,7 +57,7 @@ describe('Navigation', () => {
 
   it('Goals link opens goals page', () => {
     // Click on 'Goals' link
-    MainPage.linkGoals.click()
+    MainPage.navbar.linkGoals.click()
 
     // Verifying correct path and correct elements are visible on 'Goals' page
     cy.location('pathname').should('include', '/goal')
@@ -65,7 +66,7 @@ describe('Navigation', () => {
 
   it('Local coding home logo redirects to homepage', () => {
     // Click on Local coding home logo
-    MainPage.linkHomeLogo.click()
+    MainPage.navbar.linkHomeLogo.click()
 
     // Verifying that user was redirected to the home page and page content is visible
     cy.location(`pathname`).should(`eq`, `/`)
