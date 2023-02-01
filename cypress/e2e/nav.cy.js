@@ -1,4 +1,5 @@
 import MainPage from '../pages/app/main.page'
+import CoursesPage from "../pages/app/courses.page";
 
 describe('Navigation', () => {
   //Hook to navigate to the login page, enter valid login, password, and click "Log in" button
@@ -14,7 +15,7 @@ describe('Navigation', () => {
 
     // Verifying correct path and correct elements are visible on 'Courses' page
     cy.location('pathname').should('include', '/course')
-    cy.contains('Interactive Courses').should('be.visible')
+    CoursesPage.header.should('be.visible')
   })
 
   it('Interview Questions link opens correct page', () => {
