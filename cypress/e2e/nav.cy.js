@@ -1,6 +1,7 @@
 import MainPage from '../pages/app/main.page'
 import CoursesPage from '../pages/app/courses.page'
 import InterviewQuestionsPage from '../pages/app/interview-questions.page'
+import DiaryPage from "../pages/app/diary.page";
 
 describe('Navigation', () => {
   //Hook to navigate to the login page, enter valid login, password, and click "Log in" button
@@ -33,8 +34,8 @@ describe('Navigation', () => {
     MainPage.navbar.linkDiary.click()
 
     // Verifying correct path and correct elements are visible on 'Diary' page
-    cy.location('pathname').should('include', '/diary')
-    cy.contains('Daily reports').should('be.visible')
+    DiaryPage.path.should('include', '/diary')
+    DiaryPage.header.should('be.visible')
   })
 
   it('Groups link opens groups page', () => {
