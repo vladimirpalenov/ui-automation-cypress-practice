@@ -1,7 +1,7 @@
 import MainPage from '../pages/app/main.page'
 import CoursesPage from '../pages/app/courses.page'
 import InterviewQuestionsPage from '../pages/app/interview-questions.page'
-import DiaryPage from "../pages/app/diary.page";
+import DiaryPage from '../pages/app/diary.page'
 
 describe('Navigation', () => {
   //Hook to navigate to the login page, enter valid login, password, and click "Log in" button
