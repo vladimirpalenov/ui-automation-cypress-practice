@@ -37,8 +37,6 @@ Cypress.Commands.add('login', (email, password) => {
     // Saving values of token and userId from payload in local storage var
     window.localStorage.setItem('token', response.body.payload.token)
     window.localStorage.setItem('userId', response.body.payload.userId)
-    process.env[USER_ID] = response.body.payload.userId
+    process.env['USER_ID'] = response.body.payload.userId
   })
-  // Reload the browser
-  cy.reload()
 })
