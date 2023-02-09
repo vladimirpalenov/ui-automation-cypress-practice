@@ -1,8 +1,7 @@
 import ProfilePage from '../pages/app/profile.page'
 
 describe('Profile', () => {
-
-  before(()=>{
+  before(() => {
     cy.login(Cypress.env('email'), Cypress.env('password'))
   })
 
