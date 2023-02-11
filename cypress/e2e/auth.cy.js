@@ -8,7 +8,7 @@ describe('Authentification', () => {
   })
 
   it('Log in with valid credentials', () => {
-    // Typing in valid login and password, clicking 'Log in' button
+    // Logging in with valid email and password
     AuthPage.logIn(Cypress.env('email'), Cypress.env('password'))
     // Verifying that correct path was opened and the page is rendered (has visible unique element)
     cy.location('pathname').should('include', 'profile')
