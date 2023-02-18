@@ -16,7 +16,7 @@ describe('Authentification', () => {
   })
 
   it('Log in with valid email and invalid password', () => {
-    // Typing in valid login and invalid password, clicking 'Log in' button
+    // Logging in with valid email and invalid password
     AuthPage.logIn(Cypress.env('email'), 'Test123')
     // Verifying that alert message 'Auth failed' pops up on the login page
     cy.location('pathname').should('include', 'login')
