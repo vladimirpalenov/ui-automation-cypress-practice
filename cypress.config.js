@@ -11,7 +11,8 @@ module.exports = defineConfig({
     viewportHeight: 720,
     defaultCommandTimeout: 10000,
     excludeSpecPattern: ['cypress/e2e/examples/**/*.cy.js'],
-    video: false,
-    screenshotOnRunFailure: false
+    video: true,
+    screenshotOnRunFailure: true,
   },
+  projectId: process.env.PROJECT_ID,
 })
