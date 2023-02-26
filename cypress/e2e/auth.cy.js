@@ -40,7 +40,7 @@ describe('Authentification', () => {
     // Verifying that "'email' is not a valid email" error message is displayed under the email field
     cy.contains("'email' is not a valid email").should('be.visible')
 
-    // Verifying that clearing the data typed in email input field results in 'Required' error message displayed under the email field
+    // Verifying that clearing data typed in email input field results in 'Required' error message displayed under the email field
     cy.get('#normal_login_email').clear()
 
     // Typing in password and clearing it
