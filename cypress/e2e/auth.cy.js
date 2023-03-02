@@ -25,7 +25,7 @@ describe('Authentification', () => {
       .should('be.visible')
   })
 
-  it('Log in with invalid email and password', () => {
+  it('Log in with invalid email & password', () => {
     // Typing in invalid login and password, clicking 'Log in' button
     AuthPage.logIn('pabcdef@ghijkl.com', 'W#4912Afm@')
     // Verifying that alert message 'Auth failed' pops up on the login page
