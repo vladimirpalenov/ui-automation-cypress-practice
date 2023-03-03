@@ -15,7 +15,7 @@ describe('Authentification', () => {
     cy.get('.ant-avatar-square').should('be.visible')
   })
 
-  it('Log in with valid email and invalid password', () => {
+  it('Log in with valid email & invalid password', () => {
     // Logging in with valid email and invalid password
     AuthPage.logIn(Cypress.env('email'), 'Test123')
     // Verifying that alert message 'Auth failed' pops up on the login page
