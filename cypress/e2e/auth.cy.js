@@ -1,6 +1,6 @@
 import AuthPage from '../pages/auth.page'
 
-describe('Authentification', () => {
+describe('Authentication', () => {
   // Hook to navigate to the login page before each test
   beforeEach(() => {
     // Navigating to the login page
