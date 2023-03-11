@@ -31,11 +31,6 @@ tbd
 
 * 0.0.1
     * CHANGE: added package.json, package-lock.json
-* 0.0.2
-    * CHANGE: 
-    * ADD: 
-* 0.0.3
-    * Work in progress
 
 ## Author
 
