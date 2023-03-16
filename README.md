@@ -17,7 +17,7 @@ tbd
 
 ## Usage example
 
-tbd
+Create an account on localcon=ding.us, and use credentials for testing.
 
 ## Development setup
 
