@@ -1,5 +1,5 @@
 # UI Automation Practice Project (Cypress)
-> This project was created for training purposes to develop E2E automated framework for https://localcoding.us/ website
+> This project was created for training purposes to develop E2E automated framework for https://localcoding.us/ website.
 
 ## Installation:
 
@@ -17,7 +17,9 @@ tbd
 
 ## Usage example
 
-Create an account on localcon=ding.us, and use credentials for testing.
+1. Create an account on localcoding.us 
+2. Rename example.env.json ro cypreess.env.json
+3. In cypreess.env.json update email and password with your account credentials
 
 ## Development setup
 
