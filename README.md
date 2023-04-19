@@ -6,7 +6,8 @@
 OS X & Linux:
 
 ```sh
-tbd
+1. Clone project
+2. Run npm install to install dependencies
 ```
 
 Windows:
