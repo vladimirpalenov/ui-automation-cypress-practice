@@ -3,15 +3,8 @@
 
 ## Installation:
 
-OS X & Linux:
+Windows, OS X & Linux:
 
-
-1. Clone project
-2. Run npm install to install dependencies
-3. Create cypress.env.json file according to the example
-
-
-Windows:
 
 1. Clone project
 2. Run npm install to install dependencies
