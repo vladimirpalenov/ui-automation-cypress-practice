@@ -1,5 +1,5 @@
 # UI Automation Practice Project (Cypress)
-> This project was created for training purposes to develop E2E automated framework for https://localcoding.us/ website.
+> This project was created for training purposes to develop end to end automated framework for https://localcoding.us/ website.
 
 ## Installation:
 
